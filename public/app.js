@@ -6,7 +6,7 @@
 
 
   let colecciones = {
-    coches: { nombre: 'string', precio: 'number', matricula:'string',numBastidor:'string' },
+    coches: { nombre: 'string', precio: 'number', matricula:'string',NumBastidor:'string' },
     clientes: { nombre: 'string', apellidos: 'string', dni: 'string'  }
 };
 
@@ -176,7 +176,8 @@ function json2table(collection, jsonData, classes) {
     insertar('${collection}',  { 
         ${colNames[0]}: document.getElementById('${collection}.${colNames[0]}').value,
         ${colNames[1]}: document.getElementById('${collection}.${colNames[1]}').value,
-        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value
+        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value,
+        ${colNames[3]}: document.getElementById('${collection}.${colNames[3]}').value
     }) ">
 <span>✏️</span>
 </button>
@@ -187,7 +188,8 @@ function json2table(collection, jsonData, classes) {
     modificar ('${collection}', '${fila._id}', {
         ${colNames[0]}: document.getElementById('${fila._id}.${colNames[0]}').value, 
         ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value,
-        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value
+        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value,
+        ${colNames[3]}: document.getElementById('${fila._id}.${colNames[3]}').value
     }) ">
 <span>📝</span>
 </button>
@@ -212,7 +214,7 @@ function json2table(collection, jsonData, classes) {
 <td data-label="${collection}-${campo}" class="${collection}-${campo}">
 <input id="${collection}.${campo}" 
     ${colecciones[collection][campo] == 'number'
-            ? 'type="number" min="0" max="9999.99" step=".01" style="text-align: right;"'
+            ? 'type="number" min="0" max="200000" step=".01" style="text-align: right;"'
             : 'type="text" '}  >
 </td>`;
 
@@ -221,7 +223,7 @@ function json2table(collection, jsonData, classes) {
 <td data-label="${collection}-${campo}" class="${collection}-${campo}">
 <input id="${documento._id}.${campo}" 
     ${colecciones[collection][campo] == 'number'
-            ? 'type="number" min="0" max="9999.99" step=".01" style="text-align: right;" '
+            ? 'type="number" min="0" max="200000" step=".01" style="text-align: right;" '
             : 'type="text" '}  
     value="${colecciones[collection][campo] == 'number'
             ? documento[campo].toFixed(2)
