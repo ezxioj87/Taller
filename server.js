@@ -15,6 +15,12 @@ mongoose.connect(config.db_uri, { useNewUrlParser: true })
 // --- MIDDLEWARE
 // Archivos estáticos. Deberás crear un archivo public/index.html para ver el resultado
 app.use(express.static(path.join(__dirname , 'public')));
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https')
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  else
+    next();
+});
 // Logger
 app.use(express.json());
 app.use('/api',routes);
