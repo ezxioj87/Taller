@@ -6,7 +6,7 @@
 
 
   let colecciones = {
-    coches: { nombre: 'string', precio: 'number', matricula:'string',NumBastidor:'string' },
+    coches: { nombre: 'string', precio: 'number', matricula:'string' },
     clientes: { nombre: 'string', apellidos: 'string', dni: 'string'  }
 };
 
@@ -176,8 +176,7 @@ function json2table(collection, jsonData, classes) {
     insertar('${collection}',  { 
         ${colNames[0]}: document.getElementById('${collection}.${colNames[0]}').value,
         ${colNames[1]}: document.getElementById('${collection}.${colNames[1]}').value,
-        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value,
-        ${colNames[3]}: document.getElementById('${collection}.${colNames[3]}').value
+        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value
     }) ">
 <span>✏️</span>
 </button>
@@ -188,8 +187,7 @@ function json2table(collection, jsonData, classes) {
     modificar ('${collection}', '${fila._id}', {
         ${colNames[0]}: document.getElementById('${fila._id}.${colNames[0]}').value, 
         ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value,
-        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value,
-        ${colNames[3]}: document.getElementById('${fila._id}.${colNames[3]}').value
+        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value
     }) ">
 <span>📝</span>
 </button>
