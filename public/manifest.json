@@ -1,8 +1,8 @@
 {
   "name": "Tienda Taller Juan de Dios",
   "short_name": "TallerDAW",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "theme_color": "#38648C",
+  "background_color": "#38648C",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",
