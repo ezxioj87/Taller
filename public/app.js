@@ -6,13 +6,13 @@
 
 
   let colecciones = {
-    coches: { nombre: 'string', precio: 'number', matricula:'string' },
-    clientes: { nombre: 'string', apellidos: 'string', dni: 'string'  }
+    coches: { nombre: 'string', precio: 'number', matricula:'string', NumBastidor:'string' },
+    clientes: { nombre: 'string', apellidos: 'string', edad:'number', dni: 'string'  }
 };
 
 let index = `
-     <div style="margin: 50px">
-         <h1>Tiendaw</h1>
+     <div id="divPrincipal" style="margin: 50px; background-color: rgba(56,100,140,0.7)">
+         <h1>Taller Juan de dios Bermudo</h1>
          <small><b>Ejemplo didáctico: PWA y Fullstack MEN (MongoDB + Express + NodeJS) </b></small>
          <br><br>
          <p>Esta SPA (Single Page Application) ofrece 3 opciones:</p>
@@ -176,7 +176,8 @@ function json2table(collection, jsonData, classes) {
     insertar('${collection}',  { 
         ${colNames[0]}: document.getElementById('${collection}.${colNames[0]}').value,
         ${colNames[1]}: document.getElementById('${collection}.${colNames[1]}').value,
-        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value
+        ${colNames[2]}: document.getElementById('${collection}.${colNames[2]}').value,
+        ${colNames[3]}: document.getElementById('${collection}.${colNames[3]}').value
     }) ">
 <span>✏️</span>
 </button>
@@ -187,7 +188,8 @@ function json2table(collection, jsonData, classes) {
     modificar ('${collection}', '${fila._id}', {
         ${colNames[0]}: document.getElementById('${fila._id}.${colNames[0]}').value, 
         ${colNames[1]}: document.getElementById('${fila._id}.${colNames[1]}').value,
-        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value
+        ${colNames[2]}: document.getElementById('${fila._id}.${colNames[2]}').value,
+        ${colNames[3]}: document.getElementById('${fila._id}.${colNames[3]}').value
     }) ">
 <span>📝</span>
 </button>
