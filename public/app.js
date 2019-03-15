@@ -12,7 +12,7 @@
 
 let index = `
      <div id="divPrincipal" style="margin: 50px; background-color: rgba(56,100,140,0.7)">
-         <h1>Taller Juan de dios Bermudo</h1>
+         <h1>Taller Juan de Dios Bermudo</h1>
          <small><b>Ejemplo didáctico: PWA y Fullstack MEN (MongoDB + Express + NodeJS) </b></small>
          <br><br>
          <p>Esta SPA (Single Page Application) ofrece 3 opciones:</p>
